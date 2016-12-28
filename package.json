@@ -2,7 +2,10 @@
   "name": "react-buddy-modal",
   "version": "1.0.0",
   "description": "responsive modal for react",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "npm run clean && ./node_modules/.bin/webpack --config webpack.js",
     "clean": "rm -rf dist/*",
