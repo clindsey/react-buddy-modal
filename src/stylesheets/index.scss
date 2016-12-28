@@ -45,7 +45,7 @@
   }
 }
 
-.c-buddy-modal-wrap__dialog {
+.c-buddy-modal-dialog {
   cursor: default;
   border-radius: 4px;
   position: relative;
@@ -58,7 +58,6 @@
   background: #fff;
   display: inline-block;
   vertical-align: middle;
-  box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
@@ -67,4 +66,41 @@
   @include mq($from: tablet) {
     max-width: 700px;
   }
+}
+
+.c-buddy-modal-dialog__header {
+  position: relative;
+}
+
+.c-buddy-modal-dialog__title {
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  margin-bottom: 1rem;
+  float: left;
+}
+
+.c-buddy-modal-dialog__actions {
+  height: 1.75rem;
+  font-size: 1.75rem;
+  line-height: 1.71429rem;
+  text-align: center;
+  float: right;
+}
+
+.c-buddy-modal-dialog__icon-cancel {
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  padding: 0;
+  color: #666;
+  background-color: transparent;
+  border: none;
+}
+
+.c-buddy-modal-dialog__body {
+  width: 100%;
+  text-align: left;
 }

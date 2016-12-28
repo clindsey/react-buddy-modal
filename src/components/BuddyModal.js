@@ -6,14 +6,16 @@ export default class BuddyModal extends React.Component {
     closeOnEsc: React.PropTypes.bool,
     closeOnOutsideClick: React.PropTypes.bool,
     isOpened: React.PropTypes.bool.isRequired,
-    onClose: React.PropTypes.func
+    onClose: React.PropTypes.func,
+    title: React.PropTypes.string.isRequired
   };
 
   render () {
     const {
       closeOnEsc,
       isOpened,
-      onClose
+      onClose,
+      title
     } = this.props;
     return (
       <div className="c-buddy-modal">
@@ -23,7 +25,7 @@ export default class BuddyModal extends React.Component {
         <Portal {...{closeOnEsc, isOpened, onClose}}>
           <Container
               className="c-buddy-modal-wrap"
-              {...{onClose}}
+              {...{onClose, title}}
           >
             {this.props.children}
           </Container>
@@ -36,13 +38,15 @@ export default class BuddyModal extends React.Component {
 class Container extends React.Component { // eslint-disable-line react/no-multi-comp
   static propTypes = {
     className: React.PropTypes.string,
-    onClose: React.PropTypes.func.isRequired
+    onClose: React.PropTypes.func.isRequired,
+    title: React.PropTypes.string.isRequired
   };
 
   render () {
     const {
       className,
-      onClose
+      onClose,
+      title
     } = this.props;
     return (
       <div
@@ -50,20 +54,22 @@ class Container extends React.Component { // eslint-disable-line react/no-multi-
           {...{className}}
       >
         <div
-            className="c-buddy-modal-wrap__dialog"
+            className="c-buddy-modal-dialog"
             onClick={event => event.stopPropagation()}
         >
-          <div className="c-buddy-modal-wrap__header">
-            <h2 className="c-buddy-modal-wrap__title">{'lorem ipsum'}</h2>
-            <div className="c-buddy-modal-wrap__actions">
+          <div className="c-buddy-modal-dialog__header">
+            <h2 className="c-buddy-modal-dialog__title">{title}</h2>
+            <div className="c-buddy-modal-dialog__actions">
               <button
-                  className="c-buddy-modal-wrap__icon-cancel"
+                  className="c-buddy-modal-dialog__icon-cancel"
                   onClick={() => setTimeout(onClose, 0)}
                   type="button"
               >{'\u2715'}</button>
             </div>
           </div>
-          {this.props.children}
+          <div className="c-buddy-modal-dialog__body">
+            {this.props.children}
+          </div>
         </div>
       </div>
     );
