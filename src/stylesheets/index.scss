@@ -1,0 +1,70 @@
+@import "~sass-mq/mq";
+
+.c-buddy-modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.c-buddy-modal-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  overflow: auto;
+  text-align: center;
+  padding: 1rem 1rem 0;
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  cursor: pointer;
+  -webkit-perspective: 1400px;
+          perspective: 1400px;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-overflow-scrolling: touch;
+
+  &:after {
+    vertical-align: middle;
+    display: inline-block;
+    height: 100%;
+    margin-left: -0.05rem;
+    content: "";
+  }
+}
+
+.c-buddy-modal-wrap__dialog {
+  cursor: default;
+  border-radius: 4px;
+  position: relative;
+  outline: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  background: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  z-index: 10001;
+
+  @include mq($from: tablet) {
+    max-width: 700px;
+  }
+}
