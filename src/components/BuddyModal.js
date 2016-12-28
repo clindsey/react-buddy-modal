@@ -1,5 +1,5 @@
 import React from 'react';
-import Portal from 'react-portal';
+import classNames from 'classnames';
 
 export default class BuddyModal extends React.Component {
   static propTypes = {
@@ -12,24 +12,23 @@ export default class BuddyModal extends React.Component {
 
   render () {
     const {
-      closeOnEsc,
       isOpened,
       onClose,
       title
     } = this.props;
+    const className = classNames({
+      'c-buddy-modal': true,
+      'c-buddy-modal--is-opened': isOpened
+    });
     return (
-      <div className="c-buddy-modal">
-        <Portal {...{isOpened}}>
-          <div className="c-buddy-modal-overlay" />
-        </Portal>
-        <Portal {...{closeOnEsc, isOpened, onClose}}>
-          <Container
-              className="c-buddy-modal-wrap"
-              {...{onClose, title}}
-          >
-            {this.props.children}
-          </Container>
-        </Portal>
+      <div {...{className}}>
+        <div className="c-buddy-modal-overlay" />
+        <Container
+            className="c-buddy-modal-wrap"
+            {...{onClose, title}}
+        >
+          {this.props.children}
+        </Container>
       </div>
     );
   }

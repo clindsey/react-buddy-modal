@@ -1,6 +1,6 @@
 {
   "name": "react-buddy-modal",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "responsive modal for react",
   "main": "./dist/index.js",
   "files": [
@@ -33,7 +33,6 @@
     "node-sass": "^4.1.1",
     "postcss-assets": "^4.1.0",
     "postcss-cssnext": "^2.9.0",
-    "react-portal": "^3.0.0",
     "sass": "^0.5.0",
     "sass-loader": "^4.1.1",
     "sass-mq": "^3.3.2",
@@ -44,5 +43,8 @@
   "peerDependencies": {
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5"
   }
 }

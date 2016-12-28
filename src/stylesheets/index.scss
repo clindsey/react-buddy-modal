@@ -1,5 +1,13 @@
 @import "~sass-mq/mq";
 
+.c-buddy-modal {
+  display: none;
+}
+
+.c-buddy-modal--is-opened {
+  display: block;
+}
+
 .c-buddy-modal-overlay {
   position: fixed;
   top: 0;
