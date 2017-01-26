@@ -57,7 +57,7 @@ class Container extends React.Component { // eslint-disable-line react/no-multi-
             onClick={event => event.stopPropagation()}
         >
           <div className="c-buddy-modal-dialog__header">
-            <h2 className="c-buddy-modal-dialog__title">{title}</h2>
+            {title && (<h2 className="c-buddy-modal-dialog__title">{title}</h2>)}
             <div className="c-buddy-modal-dialog__actions">
               <button
                   className="c-buddy-modal-dialog__icon-cancel"
