@@ -1,6 +1,6 @@
 {
   "name": "react-buddy-modal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "responsive modal for react",
   "main": "./dist/index.js",
   "files": [
